@@ -1,0 +1,231 @@
+@use '../abstracts/' as *;
+
+.header {
+   height: rem(985);
+   background: url('../../assets/images/header-bg.png') 0 0 / cover no-repeat;
+   color: var(--color-text-light);
+   padding-bottom: rem(82);
+
+   @include mobile {
+      height: rem(600);
+   }
+
+   .js-dropdown-wrap .input-btn svg {
+      transition: transform var(--transition-duration) ease;
+   }
+
+   .js-dropdown-wrap.is-open .custom-datalist {
+      display: flex;
+   }
+
+   .js-dropdown-wrap.is-open .input-btn svg {
+      transform: rotate(180deg);
+   }
+
+   &__wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+
+   &__top {
+      @include flex-center;
+      padding-top: rem(16);
+      column-gap: rem(10);
+   }
+
+   &__logo {
+      margin-right: rem(30);
+      flex-shrink: 0;
+
+      @include tablet {
+         max-width: rem(100);
+         margin-right: 0;
+      }
+
+      @include mobile {
+         max-width: rem(84);
+      }
+   }
+
+   &__list {
+      @include flex-center;
+      column-gap: rem(24);
+
+      @include tablet {
+         column-gap: rem(10);
+      }
+   }
+
+   &__link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      height: rem(36);
+      font-weight: 600;
+
+      @include fluid-text(18, 14);
+
+      @include hover {
+         color: var(--color-accent);
+
+         &::after {
+            width: 100%;
+         }
+      }
+
+      &::after {
+         content: "";
+         display: inline-block;
+         position: absolute;
+         top: 100%;
+         left: 50%;
+         translate: -50% 0;
+         width: 0;
+         height: rem(2);
+         background-color: currentColor;
+         transition-duration: var(--transition-duration);
+      }
+   }
+
+   &__top-btn {
+      @include tablet {
+         padding-inline: rem(10);
+         font-size: rem(14);
+      }
+   }
+
+   &__burger-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      color: currentColor;
+      transition-duration: var(--transition-duration);
+
+      @include reset-button;
+      @include square(rem(44));
+
+      @include hover {
+         scale: 1.1;
+         opacity: 0.8;
+      }
+   }
+
+   &__main {
+      @include mobile {
+         display: flex;
+         flex-direction: column;
+         row-gap: rem(32);
+      }
+   }
+
+   &__title {
+      margin-bottom: rem(41);
+      max-width: rem(1080);
+   }
+
+   &__form-wrapper {
+      padding: rem(40) rem(42);
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: var(--border-radius-large);
+   }
+
+   &__form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: rem(24);
+
+      @include tablet {
+         justify-content: left;
+         gap: rem(15);
+      }
+   }
+
+   &__location-wrap,
+   &__participants-wrap,
+   &__camp-date-wrap {
+      position: relative;
+      display: inline-block;
+      flex-basis: rem(270);
+
+      span,
+      label {
+         font-size: rem(14);
+      }
+   }
+
+   &__search-btn {
+      background-color: var(--color-text-light);
+      font-weight: 700;
+      color: var(--bg-dark);
+      align-self: start;
+      
+
+      @include hover {
+         color: var(--color-light-hov);
+         background-color: var(--bg-dark);
+         border: 1px solid var(--color-light-hov);
+      }
+
+   }
+
+   .input {
+      margin-bottom: rem(8);
+      font-size: rem(16);
+   }
+
+   .input::placeholder {
+      color: currentColor;
+   }
+
+   .input-btn {
+      position: absolute;
+      bottom: rem(50);
+      right: rem(15);
+      height: rem(20);
+      width: rem(20);
+      color: var(--color-light-hov);
+      cursor: pointer;
+   }
+
+   .custom-datalist {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: rem(52);
+      left: 0;
+      max-height: rem(210);
+      width: 100%;
+      background: var(--bg-light);
+      border-radius: var(--border-radius-medium);
+      padding: 0;
+      box-shadow: 0 rem(10) rem(25) rgba(0, 0, 0, 0.15);
+      z-index: 100;
+      overflow-y: auto;
+      color: var(--bg-dark);
+      cursor: pointer;
+
+      li {
+         display: flex;
+         min-height: rem(52);
+         align-items: center;
+         flex-basis: rem(50);
+         padding-left: rem(15);
+         transition: all var(--transition-duration) ease;
+      }
+
+      li:hover,
+      li.is-active {
+         color: var(--bg-light);
+         background-color: var(--bg-dark);
+      }
+   }
+}
+
+
+
+

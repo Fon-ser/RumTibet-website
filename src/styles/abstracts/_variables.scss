@@ -1,0 +1,39 @@
+// _variables.scss
+
+:root {
+   // Цвета
+   --color-text-light: #fdfdfd;
+   --color-text-dark: #18121e;
+   --bg-light: #f3f5f4;
+   --bg-dark: #1a3e3e;
+   --color-light-hov: #e1e3e4;
+   --color-accent: #f2be22;
+   --color-rating-bg: rgba(255,255,255,.4);
+   --color-rating-star: #f2be22;
+
+   // Размеры контейнера и секций
+   --container-width: 1180px;
+   --container-padding-x: 20px;
+   --container-padding-mobile-x: 15px;
+   
+   // Элементы интерфейса
+   --input-height-small: 44px;
+   --input-height-large: 52px;
+   --button-height-small: 44px;
+   --button-height-large: 52px;
+   --border-button: 1px solid var(--bg-dark);
+   --transition-duration: 0.2s;
+
+   // Радиусы
+   --border-radius-small: 4px;
+   --border-radius-medium: 8px;
+   --border-radius-large: 10px;
+   --border-radius-big: 22px;
+}
+
+$font-main: 'Nunito Sans', sans-serif;
+$font-second: 'NEXT ART', sans-serif;
+$font-third: 'Inter', sans-serif;
+
+
+

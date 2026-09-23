@@ -1,0 +1,86 @@
+@use '../abstracts/' as *;
+
+.container {
+   width: 100%;
+   max-width: calc(var(--container-width) + (var(--container-padding-x))*2);
+   padding-inline: var(--container-padding-x);
+   margin-inline: auto;
+
+   @include mobile {
+      padding-inline: var(--container-padding-mobile-x);
+   }
+}
+
+.visually-hidden {
+   position: absolute !important;
+   width: 1px !important;
+   height: 1px !important;
+   margin: -1px !important;
+   border: 0 !important;
+   padding: 0 !important;
+   white-space: nowrap !important;
+   clip-path: inset(100%) !important;
+   clip: rect(0 0 0 0) !important;
+   overflow: hidden !important;
+}
+
+.hidden-mobile {
+   @include mobile {
+      display: none !important;
+   }
+}
+
+.visible-mobile {
+   @include mobile-above {
+      display: none !important;
+   }
+}
+
+.button {
+   height: var(--button-height-large);
+   background-color: var(--bg-dark);
+   border: var(--border-button);
+   border-radius: var(--border-radius-small);
+   padding: 16px 36px;
+   color: var(--color-text-light);
+   font-weight: 600;
+   font-size: 16px;
+   line-height: 1.25;
+   transition-duration: var(--transition-duration);
+   @include hover-btn;
+
+   @include mobile {
+      padding: 12px 24px;
+      height: auto;
+   }
+
+
+   &--small {
+      padding: 12px 24px;
+      height: var(--button-height-small);
+   }
+
+   &--large {
+      height: var(--input-height-large);
+      padding: rem(16) rem(36);
+   }
+
+   &:active {
+      scale: 0.9;
+   }
+}
+
+
+.input {
+   width: 270px;
+   height: var(--input-height-large);
+   background-color: transparent;
+   border: 1px solid #e1e3e4;
+   border-radius: var(--border-radius-medium);
+   padding: 0 16px;
+   color: inherit;
+}
+
+.text-accent {
+   color: var(--color-accent);
+}

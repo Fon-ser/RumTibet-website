@@ -1,0 +1,132 @@
+@use '../abstracts/' as *;
+@use '../base/globals';
+
+.blog {
+   background-color: var(--bg-light);
+   padding-block: fluid(80, 50) fluid(100, 50);
+
+   &__wrapper {
+      text-align: center;
+   }
+
+   &__title {
+      margin-bottom: rem(40);
+   }
+
+   &__title-accent {
+      @include fluid-text(24, 16);
+      line-height: 0.83;
+   }
+
+   &__card-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: fluid(20, 10) fluid(24, 10);
+      margin-bottom: rem(50);
+
+      @include tablet {
+         grid-template-columns: 1fr;
+      }
+
+      @include mobile {
+         gap: 0;
+      }
+   }
+
+   .swiper-slide {
+      height: auto !important;
+      width: auto !important;
+   }
+
+   &__card {
+      display: flex;
+      column-gap: fluid(24, 15);
+      border-radius: rem(10);
+      padding: fluid(16, 10);
+      background-color: var(--color-text-light);
+      height: 100%;
+
+      @include mobile {
+         flex-direction: column;
+         align-items: center;
+         padding: 0;
+         max-width: rem(285);
+         width: rem(285);
+      }
+   }
+
+   &__card-describe p {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 14px;
+      line-height: 1.43;
+   }
+
+   &__img-wrap {
+      width: 100%;
+      max-width: rem(230);
+      max-height: rem(280);
+      display: flex;
+
+      @include tablet {
+         flex-shrink: 1;
+      }
+
+      @include mobile {
+         max-width: rem(285);
+         max-height: rem(280);
+      }
+   }
+
+   &__img {
+      width: 100%;
+      border-radius: rem(6);
+      object-fit: cover;
+   }
+
+   &__content {
+      width: 100%;
+      height: 100%;
+      padding-block: rem(16);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: fluid(24, 16);
+
+      @include mobile {
+         padding-inline: rem(16);
+      }
+   }
+   &__card-title {
+      @include hover {
+         text-decoration: underline;
+         color: var(--bg-dark);
+      }
+
+      @include fluid-text(24, 20);
+      margin-bottom: fluid(24, 16);
+      line-height: 1.33;
+   }
+
+   &__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: rem(10);
+      font-weight: 700;
+      font-size: rem(14);
+      line-height: 143%;
+   }
+
+   &__card-link {
+      flex-shrink: 0;
+      color: var(--bg-dark);
+
+      @include hover {
+         text-decoration: underline;
+      }
+   }
+}

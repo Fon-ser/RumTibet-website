@@ -1,0 +1,117 @@
+@use '../abstracts/' as *;
+@use '../base/globals';
+
+
+.subscribe {
+   margin-bottom: rem(-146);
+   position: relative;
+   z-index: 2;
+
+   @include mobile {
+      margin-bottom: 0;
+      padding-bottom: rem(50);
+   }
+
+   &__wrapper {
+      padding: rem(40) rem(100);
+      display: flex;
+      justify-content: space-between;
+      column-gap: rem(64);
+      border-radius: rem(6);
+      box-shadow: 0 0 rem(15) 0 rgba(24, 18, 30, 0.12);
+      background: var(--color-text-light);
+      color: var(--color-text-dark);
+
+      @include desktop {
+         padding: rem(40) rem(35);
+         column-gap: rem(20);
+      }
+
+      @include tablet {
+         flex-direction: column;
+         row-gap: rem(18);
+         padding-inline: rem(24);
+      }
+   }
+
+   &__info {
+      flex-basis: rem(380);
+
+      @include tablet {
+         flex-basis: auto;
+         text-align: center;
+      }
+
+      @include mobile-s {
+         text-align: left;
+      }
+   }
+
+   &__form {
+      display: flex;
+      flex-direction: column;
+      flex-basis: rem(536);
+      gap: rem(8);
+
+      @include tablet {
+         flex-basis: auto;
+      }
+   }
+
+   &__label {
+      font-weight: 600;
+      font-size: rem(16);
+      line-height: 1.25;
+   }
+
+   &__subtitle {
+      font-size: rem(18);
+
+      @include mobile-s {
+         font-size: rem(16)
+      }
+   }
+
+   &__title {
+      font-size: rem(24);
+      @include fluid-text(26, 24);
+
+      @include mobile {
+         font-size: rem(24);
+      }
+   }
+
+   &__input-group {
+      display: flex;
+      gap: rem(16);
+
+      @include mobile-s {
+         flex-direction: column;
+         margin-bottom: rem(24);
+      }
+   }
+
+   &__input {
+      height: rem(44);
+
+      @include tablet {
+         width: 100%;
+      }
+   }
+
+   &__policy {
+      font-weight: 600;
+      font-size: rem(14);
+      line-height: 1.29;
+
+      a {
+         text-decoration: underline;
+         text-decoration-skip-ink: none;
+      }
+   }
+
+   &__btn {
+      white-space: nowrap;
+      align-self: start;
+   }
+}

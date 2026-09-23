@@ -1,0 +1,200 @@
+@use '../abstracts/' as *;
+@use '../base/globals';
+
+.destination {
+   padding-block: fluid(80, 50) fluid(100, 50);
+   min-width: 0;
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: rem(50);
+      width: 100%;
+   }
+
+   &__title {
+      text-align: center;
+   }
+
+   &__title-accent {
+      @include fluid-text(24, 16);
+      line-height: 0.83;
+   }
+
+   &__main {
+      max-width: 100%;
+      width: 100%;
+      overflow: hidden;
+   }
+
+   &__card-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: rem(20);
+
+      @include tablet {
+         gap: rem(15);
+      }
+
+      @include mobile {
+         gap: 0;
+      }
+   }
+
+   &__card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 rem(285);
+      justify-self: center;
+      height: auto;
+      width: 100%;
+      border-radius: rem(32);
+      font-weight: 700;
+      overflow: hidden;
+   }
+
+   &__card-image {
+      width: 100%;
+      object-fit: cover;
+   }
+
+   &__rating-badge {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: rem(4);
+      position: absolute;
+      top: rem(45);
+      right: 0;
+      width: rem(65);
+      height: rem(32);
+      border-radius: rem(4) 0 0 rem(4);
+      padding: rem(4) rem(8);
+      backdrop-filter: blur(4px);
+      background: var(--color-rating-bg);
+
+
+      .star {
+         width: rem(24);
+         height: rem(24);
+         color: var(--color-rating-star);
+         @include flex-center;
+      }
+
+      .rate {
+         font-size: rem(14);
+         line-height: 1.29;
+         color: var(--bg-dark);
+      }
+   }
+
+   &__card-footer {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+      row-gap: rem(40);
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: rem(75);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(2px);
+      color: var(--color-text-light);
+      line-height: 1.20;
+      padding: rem(20) rem(32);
+      border-radius: rem(32);
+      cursor: pointer;
+      transition: height 0.4s ease-in-out;
+
+      @include desktop {
+         row-gap: rem(12);
+         padding: rem(20);
+      }
+
+      @include tablet {
+         height: rem(65);
+         padding: rem(20) rem(12);
+      }
+
+      &--active {
+         height: 100%;
+      }
+   }
+
+   &__card-info-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: rem(14);
+   }
+
+   &__card-title {
+      font-size: rem(24);
+
+      @include desktop {
+         font-size: rem(22);
+      }
+
+      @include tablet {
+         @include fluid-text(24, 14);
+      }
+
+      @include mobile {
+         font-size: rem(18);
+      }
+   }
+
+   &__card-subtitle {
+      font-size: 14px;
+      line-height: 1.29;
+      font-weight: 400;
+      white-space: nowrap;
+
+      @include tablet {
+         display: none;
+      }
+   }
+
+   &__price {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: rem(4);
+      padding: rem(8) rem(16);
+      background: rgba(255, 255, 255, 0.3);
+      font-size: rem(20);
+      text-align: center;
+      flex-shrink: 0;
+
+      @include desktop {
+         padding: rem(6) rem(8);
+      }
+
+      @include tablet {
+         font-size: rem(16);
+      }
+   }
+
+   &__card-text {
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: 1.50;
+
+      @include desktop {
+         font-size: rem(14);
+         display: -webkit-box;
+         -webkit-line-clamp: 7;
+         line-clamp: 7;
+         -webkit-box-orient: vertical;
+         overflow: hidden;
+      }
+   }
+
+   &__card-btn {
+      align-self: start;
+   }
+}

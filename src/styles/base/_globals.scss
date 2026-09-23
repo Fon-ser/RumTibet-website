@@ -1,0 +1,65 @@
+@use '../abstracts/' as *;
+
+html:has(dialog[open]) {
+   overflow: hidden;
+}
+
+body {
+   height: 100%;
+   font-family: $font-main;
+   font-size: 18px;
+   font-weight: 400;
+   color: var(--color-text-dark);
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+   @include reset-link;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+   font-size: inherit;
+}
+
+h1 {
+   font-family: $font-second;
+   font-weight: 700;
+   @include fluid-text(50, 27);
+   letter-spacing: 0.02em;
+}
+
+h2 {
+   font-family: $font-main;
+   font-weight: 800;
+   line-height: 1.2;
+   color: var(--color-text-dark);
+   @include fluid-text(32, 23);
+}
+
+input::-webkit-calendar-picker-indicator {
+   opacity: 0;
+}
+
+input:focus,
+button:focus {
+   outline: none;
+   box-shadow: 0 0 2px 2px color-mix(in srgb, var(--color-accent) 70%, transparent);
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+   overflow: hidden;
+}
+
+main {
+   flex-grow: 1;
+}

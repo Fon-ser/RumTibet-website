@@ -1,0 +1,117 @@
+@use '../abstracts/' as *;
+@use '../base/globals';
+
+.programm {
+
+   padding-block: fluid(80, 50) fluid(100, 50);
+
+   &__wrapper {
+      display: flex;
+      align-items: center;
+      column-gap: 10.17vw;
+
+      @include tablet {
+         column-gap: rem(50);
+      }
+
+      @include mobile {
+         flex-direction: column;
+         justify-content: space-between;
+      }
+   }
+
+   &__images-wrap {
+      position: relative;
+      max-width: rem(480);
+      max-height: rem(526);
+      width: 40.68vw;
+      height: 44.58vw;
+      flex-shrink: 0;
+
+      @include mobile {
+         display: flex;
+         order: 1;
+         width: auto;
+         height: auto;
+      }
+   }
+
+   &__img {
+      display: inline-block;
+      position: relative;
+      border-radius: var(--border-radius-big);
+      overflow: hidden;
+      max-width: rem(350);
+      width: 29.66vw;
+      height: auto;
+
+      &:hover {
+         z-index: 1;
+      }
+
+      &:not(:first-child) {
+         position: absolute;
+         bottom: 0;
+         right: 0;
+
+         @include mobile {
+            position: relative;
+            width: rem(358);
+         }
+      }
+   }
+
+   &__play-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include square(rem(50));
+      @include absolute-center;
+      background-color: color-mix(in srgb, var(--color-text-light) 60%, transparent);
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      transition-duration: var(--transition-duration);
+      cursor: pointer;
+
+      @include hover {
+         scale: 1.2;
+      }
+   }
+
+   &__main {
+      max-width: rem(580);
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      margin-bottom: rem(40);
+
+      @include mobile {
+         max-width: rem(610);
+      }
+
+   }
+
+   &__title {
+      margin-bottom: rem(24);
+   }
+
+   &__title-accent {
+      @include fluid-text(24, 16);
+      line-height: 0.83;
+   }
+
+   &__text {
+      margin-bottom: rem(40);
+   }
+
+   &__btn {
+      color: var(--color-text-light);
+      align-self: center;
+
+      // @include tablet {
+      //    height: var(--button-height-small);
+      //    padding-inline: rem(24);
+      // }
+   }
+}

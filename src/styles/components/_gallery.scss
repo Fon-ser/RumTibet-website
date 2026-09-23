@@ -1,0 +1,80 @@
+@use '../abstracts/' as *;
+@use '../base/globals';
+
+.gallery {
+   text-align: center;
+   padding-block: fluid(80, 50) fluid(100, 50);
+
+   &__title {
+      margin-bottom: rem(40);
+   }
+
+   &__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: rem(20);
+      margin-bottom: rem(50);
+
+      @include mobile {
+         display: flex;
+         gap: 0;
+      }
+   }
+
+   &__item {
+      position: relative;
+      border-radius: rem(6);
+      overflow: hidden;
+      max-height: rem(250);
+      cursor: pointer;
+
+      @include mobile {
+         max-width: rem(280);
+      }
+
+      &::after {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background-color: rgba(0, 0, 0, 0.3);
+         background-image: url(../../assets/icons/zoom.svg);
+         background-repeat: no-repeat;
+         background-position: center;
+         opacity: 0;
+         visibility: hidden;
+         transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      &:hover {
+         img {
+            transform: scale(1.05);
+         }
+
+         &::after {
+            opacity: 1;
+            visibility: visible;
+         }
+      }
+
+      &--wide {
+         grid-column: span 2;
+      }
+   }
+
+   &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   .swiper-slide {
+      display: flex;
+      width: rem(280);
+      height: rem(250);
+      flex-shrink: 0;
+   }
+
+   .js-gallery-slide img {
+      object-fit: cover;
+   }
+}
