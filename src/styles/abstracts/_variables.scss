@@ -1,4 +1,19 @@
 // _variables.scss
+@use 'functions' as *;
+
+$sz-input-small: rem(44);
+$sz-input-large: rem(52);
+$sz-button-small: rem(44);
+$sz-button-large: rem(52);
+
+$rad-small: rem(4);
+$rad-medium: rem(8);
+$rad-large: rem(10);
+$rad-big: rem(22);
+
+$font-main: 'Nunito Sans', sans-serif;
+$font-second: 'NEXT ART', sans-serif;
+$font-third: 'Inter', sans-serif;
 
 :root {
    // Цвета
@@ -8,32 +23,39 @@
    --bg-dark: #1a3e3e;
    --color-light-hov: #e1e3e4;
    --color-accent: #f2be22;
-   --color-rating-bg: rgba(255,255,255,.4);
+   --color-rating-bg: rgba(255, 255, 255, .4);
    --color-rating-star: #f2be22;
 
    // Размеры контейнера и секций
    --container-width: 1180px;
    --container-padding-x: 20px;
    --container-padding-mobile-x: 15px;
-   
-   // Элементы интерфейса
-   --input-height-small: 44px;
-   --input-height-large: 52px;
-   --button-height-small: 44px;
-   --button-height-large: 52px;
-   --border-button: 1px solid var(--bg-dark);
+
+   // // Элементы интерфейса
+   // --input-height-small: rem(44);
+   // --input-height-large: rem(52);
+   // --button-height-small: rem(44);
+   // --button-height-large: rem(52);
+   // --border-button: rem(1) solid var(--bg-dark);
+   // --transition-duration: 0.2s;
+
+   // // Радиусы
+   // --border-radius-small: rem(4);
+   // --border-radius-medium: rem(8);
+   // --border-radius-large: rem(10);
+   // --border-radius-big: rem(22);
+   --input-height-small: #{$sz-input-small};
+   --input-height-large: #{$sz-input-large};
+   --button-height-small: #{$sz-button-small};
+   --button-height-large: #{$sz-button-large};
+   --border-button: #{rem(1)} solid var(--bg-dark);
    --transition-duration: 0.2s;
 
-   // Радиусы
-   --border-radius-small: 4px;
-   --border-radius-medium: 8px;
-   --border-radius-large: 10px;
-   --border-radius-big: 22px;
+   --border-radius-small: #{$rad-small};
+   --border-radius-medium: #{$rad-medium};
+   --border-radius-large: #{$rad-large};
+   --border-radius-big: #{$rad-big};
 }
-
-$font-main: 'Nunito Sans', sans-serif;
-$font-second: 'NEXT ART', sans-serif;
-$font-third: 'Inter', sans-serif;
 
 
 
