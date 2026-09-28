@@ -110,6 +110,10 @@
       cursor: pointer;
       transition: height 0.4s ease-in-out;
 
+      &--active {
+         height: 100%;
+      }
+      
       @include desktop {
          row-gap: rem(12);
          padding: rem(20);
@@ -118,9 +122,16 @@
       @include tablet {
          height: rem(65);
          padding: rem(20) rem(12);
+
+         @include hover {
+            height: 100%;
+         }
       }
 
-      &--active {
+
+
+
+      @include hover {
          height: 100%;
       }
    }

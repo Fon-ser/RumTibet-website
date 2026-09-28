@@ -47,9 +47,25 @@ input::-webkit-calendar-picker-indicator {
    opacity: 0;
 }
 
-input:focus,
-button:focus {
-   outline: none;
+input,
+button,
+a {
+
+   &:focus,
+   &:focus-visible {
+      outline: none;
+   }
+
+   &:focus-visible {
+      box-shadow: 0 0 2px 2px color-mix(in srgb, var(--color-accent) 70%, transparent);
+   }
+
+   &:focus:not(:focus-visible) {
+      box-shadow: none;
+   }
+}
+
+button:active {
    box-shadow: 0 0 2px 2px color-mix(in srgb, var(--color-accent) 70%, transparent);
 }
 
